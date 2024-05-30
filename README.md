@@ -1,14 +1,16 @@
-First create and run a virtual environment in the working directory
+# Benchmark Setup
 
-pip install virtualenv
-python3 -m venv <venv_name_here>
-source <venv_name_here>/bin/activate
+### First create and run a virtual environment in the working directory
 
-Then install dependencies:
-pip3 install psutil
+`pip install virtualenv`
+`python3 -m venv <venv_name_here>`
+`source <venv_name_here>/bin/activate`
 
-Ensure that you can execute the script
-Chmod +x ./runscript
+### Then install dependencies:
+`pip3 install psutil`
 
-Then run the script and wait for data to aggregate:
-./runscript
+### Ensure that you can execute the script
+`chmod +x ./runscript`
+
+### Then run the script and wait for data to aggregate:
+`./runscript`
