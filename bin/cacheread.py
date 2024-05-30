@@ -58,7 +58,6 @@ if __name__ == "__main__":
 
     for cpu1 in range(num_cpus):
         for cpu2 in range(num_cpus):
-
             print(assign_and_measure(cpu1, cpu2), end=" ")
         print()
 
