@@ -1,22 +1,27 @@
 #!/usr/bin/env bash
-# may need pip install PyQt6 and PySide2 to view, won't need this on ssh machines
 
-# make sure virtual env is being ran
+# Enable virtual environment
 source myenv/bin/activate
 
-g++ -o ./bin/aggregate ./src/aggregate.cpp
+# compile aggregation program and send to bin
+g++ -o ./bin/aggregate.out ./src/aggregate.cpp
 
-# concat file with more test results (put this in a while loop of say 100 or every x minutes)
-#for var in {1..100}
-#do
-python3 ./bin/cacheread.py >> ./src/map_input.txt
-#done
+# Adjust for loop to your desired test length.
+# All result information will be concatenated to intermediate file
+for var in {1..5}
+do
+    python3 ./bin/cacheread.py >> ./src/map_input.txt
+done
 
-# then here need to run aggregate
-./bin/aggregate < ./src/map_input.txt | sponge ./src/map_input.txt
+# Take new data and average into one set of results for the mapper to read
+./bin/aggregate.out < ./src/map_input.txt | sponge ./src/map_input.txt
 
-# then once everything is aggregated, create heat map
+# Read in the single matrix and create the corresponding heat map
 python3 ./bin/mapper.py < ./src/map_input.txt
 
-# only uncomment this when on host system
+# Open the image file. Should only do this on local systems with xdg installed
+# Can also change to your preferred image viewer
 # xdg-open "average_throughput_map.png"
+
+# Exit virtual environment
+deactivate

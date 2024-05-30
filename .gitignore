@@ -1,1 +1,4 @@
 myenv/
+*.out
+map_input.txt
+*.png
