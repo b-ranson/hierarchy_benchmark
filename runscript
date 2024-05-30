@@ -4,6 +4,8 @@
 # make sure virtual env is being ran
 source myenv/bin/activate
 
+g++ -o ./bin/aggregate ./src/aggregate.cpp
+
 # concat file with more test results (put this in a while loop of say 100 or every x minutes)
 #for var in {1..100}
 #do
