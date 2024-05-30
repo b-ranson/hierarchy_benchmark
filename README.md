@@ -10,6 +10,8 @@
 
 ### Then install dependencies:
 `pip3 install psutil`
+`pip3 install PyQt6`
+`pip3 install PySide2`
 
 ### Ensure that you can execute the script:
 `chmod +x ./runscript`
