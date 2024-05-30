@@ -4,9 +4,9 @@
 
 `pip install virtualenv`
 
-`python3 -m venv <venv_name_here>`
+`python3 -m venv myenv`
 
-`source <venv_name_here>/bin/activate`
+`source myenv/bin/activate`
 
 ### Then install dependencies:
 `pip3 install psutil`
