@@ -8,13 +8,14 @@ g++ -o ./bin/aggregate.out ./src/aggregate.cpp
 
 # Adjust for loop to your desired test length.
 # All result information will be concatenated to intermediate file
-for var in {1..5}
-do
-    python3 ./bin/cacheread.py >> ./src/map_input.txt
-done
+#for var in {1..5}
+#do
+#    python3 ./bin/cacheread.py >> ./src/map_input.txt
+#done
 
 # Take new data and average into one set of results for the mapper to read
-./bin/aggregate.out < ./src/map_input.txt | sponge ./src/map_input.txt
+#./bin/aggregate.out < ./src/map_input.txt | sponge ./src/map_input.txt
+./bin/aggregate.out < ./src/map_input.txt > ./src/map_input.txt.tmp && mv ./src/map_input.txt.tmp ./src/map_input.txt
 
 # Read in the single matrix and create the corresponding heat map
 python3 ./bin/mapper.py < ./src/map_input.txt
