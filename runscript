@@ -3,7 +3,7 @@
 # Enable virtual environment
 source myenv/bin/activate
 
-# compile aggregation program and send to bin
+# Compile aggregation program and send to bin
 g++ -o ./bin/aggregate.out ./src/aggregate.cpp
 
 # Adjust for loop to your desired test length.
